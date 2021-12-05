@@ -1,4 +1,5 @@
-﻿using MusicGo.Models;
+﻿using Microsoft.AspNet.Identity;
+using MusicGo.Models;
 using MusicGo.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,8 @@ namespace MusicGo.Controllers
         {
             _context = new ApplicationDbContext();
         }
-        // GET: Gigs
+        
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new GigFormViewModel
@@ -25,6 +27,25 @@ namespace MusicGo.Controllers
             };
 
             return View(viewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Create(GigFormViewModel viewModel)
+        {
+
+            var gig = new Gig
+            {
+                ArtistId = User.Identity.GetUserId(),
+                DateTime = viewModel.DateTime,
+                GenreId = viewModel.Genre,
+                Venue = viewModel.Venue
+            };
+
+            _context.Gigs.Add(gig);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

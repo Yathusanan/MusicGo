@@ -190,6 +190,14 @@
     <Compile Include="Migrations\202112051413273_PopulateGenres.Designer.cs">
       <DependentUpon>202112051413273_PopulateGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112051620051_UpdatedGigmodelWithForegnKey.cs" />
+    <Compile Include="Migrations\202112051620051_UpdatedGigmodelWithForegnKey.Designer.cs">
+      <DependentUpon>202112051620051_UpdatedGigmodelWithForegnKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112051622508_modifydatatypeofartistId.cs" />
+    <Compile Include="Migrations\202112051622508_modifydatatypeofartistId.Designer.cs">
+      <DependentUpon>202112051622508_modifydatatypeofartistId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -287,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112051413273_PopulateGenres.resx">
       <DependentUpon>202112051413273_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051620051_UpdatedGigmodelWithForegnKey.resx">
+      <DependentUpon>202112051620051_UpdatedGigmodelWithForegnKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051622508_modifydatatypeofartistId.resx">
+      <DependentUpon>202112051622508_modifydatatypeofartistId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
