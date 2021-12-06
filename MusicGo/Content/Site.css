@@ -87,3 +87,7 @@ span.field-validation-error {
 .gigs > li .details .genre {
     font-size: 15px;
 }
+
+.btn {
+    border-radius: 9px;
+}
