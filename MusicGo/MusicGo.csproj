@@ -198,6 +198,10 @@
     <Compile Include="Migrations\202112051622508_modifydatatypeofartistId.Designer.cs">
       <DependentUpon>202112051622508_modifydatatypeofartistId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112060347015_AddedNamePropertyToApplicationUser.cs" />
+    <Compile Include="Migrations\202112060347015_AddedNamePropertyToApplicationUser.Designer.cs">
+      <DependentUpon>202112060347015_AddedNamePropertyToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -209,6 +213,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\FutureDate.cs" />
     <Compile Include="ViewModels\GigFormViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112051622508_modifydatatypeofartistId.resx">
       <DependentUpon>202112051622508_modifydatatypeofartistId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112060347015_AddedNamePropertyToApplicationUser.resx">
+      <DependentUpon>202112060347015_AddedNamePropertyToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
