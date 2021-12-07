@@ -24,7 +24,7 @@ namespace MusicGo.Controllers
         {
             var userId = User.Identity.GetUserId();
 
-            var gigs = _context.Gigs.Where(g => g.ArtistId == userId && g.DateTime > DateTime.Now)
+            var gigs = _context.Gigs.Where(g => g.ArtistId == userId && g.DateTime > DateTime.Now && !g.IsCancelled)
                                     .Include(g => g.Genre)
                                     .ToList();
 
@@ -107,7 +107,7 @@ namespace MusicGo.Controllers
             gig.Venue = viewModel.Venue;
             gig.DateTime = viewModel.GetDateTime();
             gig.GenreId = viewModel.Genre;
-
+             
             _context.SaveChanges();
 
             return RedirectToAction("Mine", "Gigs");

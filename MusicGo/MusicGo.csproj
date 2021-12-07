@@ -172,9 +172,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AttendancesController.cs" />
+    <Compile Include="Controllers\Api\GigsController.cs" />
+    <Compile Include="Controllers\Api\AttendancesController.cs" />
     <Compile Include="Controllers\FolloweesController.cs" />
-    <Compile Include="Controllers\FollowingsController.cs" />
+    <Compile Include="Controllers\Api\FollowingsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -223,6 +224,10 @@
     <Compile Include="Migrations\202112061323332_FollowersModelCreateded.Designer.cs">
       <DependentUpon>202112061323332_FollowersModelCreateded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112071032480_AddIsCancelled.cs" />
+    <Compile Include="Migrations\202112071032480_AddIsCancelled.Designer.cs">
+      <DependentUpon>202112071032480_AddIsCancelled.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -259,6 +264,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -343,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112061323332_FollowersModelCreateded.resx">
       <DependentUpon>202112061323332_FollowersModelCreateded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112071032480_AddIsCancelled.resx">
+      <DependentUpon>202112071032480_AddIsCancelled.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

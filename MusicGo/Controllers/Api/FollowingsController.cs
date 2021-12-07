@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace MusicGo.Controllers
+namespace MusicGo.Controllers.Api
 {
     [Authorize]
     public class FollowingsController : ApiController
