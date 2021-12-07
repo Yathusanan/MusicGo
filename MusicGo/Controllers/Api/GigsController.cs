@@ -31,6 +31,29 @@ namespace MusicGo.Controllers.Api
 
             gig.IsCancelled = true;
 
+            var notification = new Notification
+            {
+                DateTime = DateTime.Now,
+                Gig = gig,
+                Type = NotificationType.GigCanceled
+            };
+
+            var attendees = _context.Attendances
+                                    .Where(a => a.GigId == gig.Id)
+                                    .Select(a => a.Attendee)
+                                    .ToList();
+
+            foreach(var ateendee in attendees)
+            {
+                var userNotification = new UserNotification
+                {
+                    User = ateendee,
+                    Notification = notification
+                };
+
+                _context.UserNotifications.Add(userNotification);
+            }
+
             _context.SaveChanges();
 
             return Ok();

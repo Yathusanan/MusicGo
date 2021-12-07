@@ -18,6 +18,8 @@ namespace MusicGo.Models
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Following> Followings { get; set; }
+        public DbSet<Notification> Notification { get; set; }
+        public DbSet<UserNotification> UserNotifications { get; set; }
 
         public static ApplicationDbContext Create()
         {
@@ -39,6 +41,11 @@ namespace MusicGo.Models
             modelBuilder.Entity<ApplicationUser>()
                         .HasMany(u => u.Followees)
                         .WithRequired(f => f.Follower)
+                        .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<UserNotification>()
+                        .HasRequired(n => n.User)
+                        .WithMany()
                         .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
